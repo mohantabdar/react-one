@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 let list=[
   {
-    name:'Mohan Tabar',
+    name:'Mohan Tabdar',
     address:'Tankisinuwari',
     objectID:0
   },
@@ -12,12 +12,12 @@ let list=[
     objectID:1
   },
   {
-    name:'Ramesh Tandar',
+    name:'Ramesh Thandar',
     address:'Pahadgachh',
     objectID:2
   },
   {
-    name:'Ramu Tandar',
+    name:'Ramu Tabdar',
     address:'Pahadgachh',
     objectID:3
   }
@@ -42,14 +42,6 @@ this.setState({ list: updatedList });
 
 
   render() {
-    // const helloWorld= {
-    //   name: 'Mohan Tabdar and Manju Sardar',
-    //   address: 'Tankisinuwari'
-    // };
-    // helloWorld.name='Hari Thandar';
-    // helloWorld.address='Pahadgachh';
-    // const mo='This is the test';
-    //mo='hello this another test';
     return (
       <div className="App container">
         {this.state.list.map(item=>{
