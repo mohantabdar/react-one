@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 let list=[
   {
     name:'Mohan Tabar',
@@ -23,7 +22,6 @@ let list=[
     objectID:3
   }
 ];
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -31,11 +29,17 @@ class App extends Component {
       list,
     };
     this.onDismiss=this.onDismiss.bind(this);
+
   }
-  onDismiss(id) {
+onDismiss(id) {
 const isNotId = item => item.objectID !== id;
-const updatedList = this.state.list.filter(isNotId); this.setState({ list: updatedList });
+
+const updatedList = this.state.list.filter(isNotId);
+
+this.setState({ list: updatedList });
+
 }
+
 
   render() {
     // const helloWorld= {
@@ -48,26 +52,25 @@ const updatedList = this.state.list.filter(isNotId); this.setState({ list: updat
     //mo='hello this another test';
     return (
       <div className="App container">
-      {list.map(item=>{
-          return(
-            <div key="item.objectID">
+        {this.state.list.map(item=>{
+            return(
+              <div key={item.objectID}>
+                <span>{item.name}</span>
+              <span>{item.address}</span>
+              <span>
+                <button
+                  onClick={() => this.onDismiss(item.objectID)}
+                  type="button" className="btn btn-primary"> Dismiss
+                </button>
+              </span>
 
-              <span>{item.name}</span>
-            <span>{item.address}</span>
-            <span>
-              <button
-                onClick={() => this.onDismiss(item.objectID)}
-                type="button" className="btn btn-primary"> Dismiss
-              </button>
-            </span>
+              </div>
 
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
       </div>
     );
   }
 }
-
 export default App;
